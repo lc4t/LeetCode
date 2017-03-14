@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 import nose
 from problems.No1_Two_Sum import Solution as No1
+from problems.No2_Two_Numbers import Solution as No2
 from problems.No292_Nim_Game import Solution as No292
 from problems.No344_Reverse_String import Solution as No344
 from problems.No371_Sum_of_Two_Integers import Solution as No371
@@ -27,6 +28,39 @@ def test_1():
     checkto1(func, [0, 3], [0, 4, 3, 0], 0)
     checkto1(func, [2, 4], [-1, -2, -3, -4, -5], -8)
 
+# Definition for singly-linked list.
+
+
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
+class MakeList(object):
+    def __init__(self, li):
+        self.node_list = []
+        for i in li:
+            self.node_list.append(ListNode(i))
+        length = len(self.node_list)
+        for i in range(0, length - 1):
+            self.node_list[i].next = self.node_list[i + 1]
+
+    def get(self):
+        return self.node_list[0]
+
+
+def test_2():
+    func = No2().addTwoNumbers
+
+    l1 = MakeList([2, 4, 3]).get()
+    l2 = MakeList([5, 6, 4]).get()
+    checkto1(func, [7, 0, 8], l1, l2)
+
+    l1 = MakeList([1, 8]).get()
+    l2 = MakeList([0]).get()
+    checkto1(func, [1, 8], l1, l2)
+
 
 def test_136():
     func = No136().singleNumber
@@ -49,6 +83,7 @@ def test_344():
     func = No344().reverseString
     checkto1(func, 'olleh', 'hello')
 
+
 def test_371():
     func = No371().getSum
     checkto1(func, -2, -1, -1)
@@ -60,25 +95,22 @@ def test_371():
 def test_412():
     func = No412().fizzBuzz
     ans = [
-    "1",
-    "2",
-    "Fizz",
-    "4",
-    "Buzz",
-    "Fizz",
-    "7",
-    "8",
-    "Fizz",
-    "Buzz",
-    "11",
-    "Fizz",
-    "13",
-    "14",
-    "FizzBuzz"
-    ]
+        "1",
+        "2",
+        "Fizz",
+        "4",
+        "Buzz",
+        "Fizz",
+        "7",
+        "8",
+        "Fizz",
+        "Buzz",
+        "11",
+        "Fizz",
+        "13",
+        "14",
+        "FizzBuzz"]
     checkto1(func, ans, 15)
-
-
 
 
 if __name__ == '__main__':

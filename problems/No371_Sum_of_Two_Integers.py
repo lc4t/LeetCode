@@ -5,8 +5,8 @@
 class Solution(object):
     def getSum(self, a, b):
         MAX_INT = 0x7FFFFFFFFFFFFFF
-        MIN_INT = 0x800000000000000
-        MASK =    0x1000000000000000
+        # MIN_INT = 0x800000000000000
+        MASK = 0x1000000000000000
 
         while (b):
             s = (a ^ b) % MASK
