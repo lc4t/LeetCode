@@ -3,6 +3,8 @@
 import nose
 from problems.No1_Two_Sum import Solution as No1
 from problems.No2_Two_Numbers import Solution as No2
+from problems.No3_Longest_Substring_Without_Repeating_Characters \
+    import Solution as No3
 from problems.No292_Nim_Game import Solution as No292
 from problems.No344_Reverse_String import Solution as No344
 from problems.No371_Sum_of_Two_Integers import Solution as No371
@@ -60,6 +62,13 @@ def test_2():
     l1 = MakeList([1, 8]).get()
     l2 = MakeList([0]).get()
     checkto1(func, [1, 8], l1, l2)
+
+
+def test_3():
+    func = No3().lengthOfLongestSubstring
+    checkto1(func, 3, 'abcabcbb')
+    checkto1(func, 1, 'bbbbb')
+    checkto1(func, 3, 'pwwkew')
 
 
 def test_136():
