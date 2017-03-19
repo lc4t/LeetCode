@@ -5,6 +5,7 @@ from problems.No1_Two_Sum import Solution as No1
 from problems.No2_Two_Numbers import Solution as No2
 from problems.No3_Longest_Substring_Without_Repeating_Characters \
     import Solution as No3
+from problems.No4_Median_of_Two_Sorted_Arrays import Solution as No4
 from problems.No292_Nim_Game import Solution as No292
 from problems.No344_Reverse_String import Solution as No344
 from problems.No371_Sum_of_Two_Integers import Solution as No371
@@ -69,6 +70,23 @@ def test_3():
     checkto1(func, 3, 'abcabcbb')
     checkto1(func, 1, 'bbbbb')
     checkto1(func, 3, 'pwwkew')
+
+
+def test_4():
+    func = No4().findMedianSortedArrays
+    checkto1(func, 2.0, [1, 3], [2])
+    checkto1(func, 2.5, [1, 2], [3, 4])
+    checkto1(func, 1.0, [], [1])
+    checkto1(func, 2.0, [1, 2], [1, 2, 3])
+    checkto1(func, 2.0, [1], [2, 3])
+    checkto1(func, 2.0, [3], [1, 2])
+    checkto1(func, 2.5, [2], [1, 3, 4])
+    checkto1(func, 2.5, [1], [2, 3, 4])
+    checkto1(func, 3.5, [1, 2], [3, 4, 5, 6])
+    checkto1(func, 2.5, [2, 4], [1, 3])
+    checkto1(func, 3.5, [1, 2, 6], [3, 4, 5])
+    checkto1(func, 3.5, [1, 4, 5], [2, 3, 6])
+    checkto1(func, 3.0, [1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
 
 
 def test_136():
