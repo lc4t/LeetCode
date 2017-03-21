@@ -6,6 +6,12 @@ from problems.No2_Two_Numbers import Solution as No2
 from problems.No3_Longest_Substring_Without_Repeating_Characters \
     import Solution as No3
 from problems.No4_Median_of_Two_Sorted_Arrays import Solution as No4
+from problems.No5_Longest_Palindromic_Substring import Solution as No5
+from problems.No6_ZigZag_Conversion import Solution as No6
+from problems.No7_Reverse_Integer import Solution as No7
+from problems.No8_String_to_Integer_atoi import Solution as No8
+from problems.No9_Palindrome_Number import Solution as No9
+from problems.No10_Regular_Expression_Matching import Solution as No10
 from problems.No292_Nim_Game import Solution as No292
 from problems.No344_Reverse_String import Solution as No344
 from problems.No371_Sum_of_Two_Integers import Solution as No371
@@ -87,6 +93,58 @@ def test_4():
     checkto1(func, 3.5, [1, 2, 6], [3, 4, 5])
     checkto1(func, 3.5, [1, 4, 5], [2, 3, 6])
     checkto1(func, 3.0, [1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
+
+
+def test_5():
+    func = No5().longestPalindrome
+    checkto1(func, 'bab', 'babad')
+    checkto1(func, 'bb', 'cbbd')
+    checkto1(func, 'bb', 'bb')
+    checkto1(func, 'b', 'b')
+    checkto1(func, 'bb', 'abb')
+    checkto1(func, 'tattarrattat', 'tattarrattat')
+
+
+def test_6():
+    func = No6().convert
+    checkto1(func, 'PAHNAPLSIIGYIR', 'PAYPALISHIRING', 3)
+    checkto1(func, '0817926354', '0123456789', 5)
+
+
+def test_7():
+    func = No7().reverse
+    checkto1(func, 0, 0)
+    checkto1(func, -321, -123)
+    checkto1(func, 9, 900000)
+
+
+def test_8():
+    func = No8().myAtoi
+    checkto1(func, 0, '')
+
+
+def test_9():
+    func = No9().isPalindrome
+    checkto1(func, 0, -2147483648)
+
+
+def test_10():
+    func = No10().isMatch
+    checkto1(func, False, 'aa', 'a')
+    checkto1(func, True, 'aa', 'aa')
+    checkto1(func, False, 'aaa', 'aa')
+    checkto1(func, True, 'aa', 'a*')
+    checkto1(func, True, 'aa', '.a')
+    checkto1(func, True, 'ab', '.*')
+    checkto1(func, True, 'aab', 'c*a*b')
+    checkto1(func, True, 'aaa', 'aaa')
+    checkto1(func, False, 'a', 'ab*a')
+    checkto1(func, True, 'aaa', 'a*a')
+    checkto1(func, False, 'aaba', 'ab*a*c*a')
+    checkto1(func, True, 'bbbba', '.*a*a')
+    checkto1(func, True, 'ab', '.*..')
+    checkto1(func, True, 'ab', '.*..c*')
+    checkto1(func, True, 'abbabaaaaaaacaa', 'a*.*b.a.*c*b*a*c*')
 
 
 def test_136():
