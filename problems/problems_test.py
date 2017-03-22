@@ -12,6 +12,7 @@ from problems.No7_Reverse_Integer import Solution as No7
 from problems.No8_String_to_Integer_atoi import Solution as No8
 from problems.No9_Palindrome_Number import Solution as No9
 from problems.No10_Regular_Expression_Matching import Solution as No10
+from problems.No11_Container_With_Most_Water import Solution as No11
 from problems.No292_Nim_Game import Solution as No292
 from problems.No344_Reverse_String import Solution as No344
 from problems.No371_Sum_of_Two_Integers import Solution as No371
@@ -145,6 +146,11 @@ def test_10():
     checkto1(func, True, 'ab', '.*..')
     checkto1(func, True, 'ab', '.*..c*')
     checkto1(func, True, 'abbabaaaaaaacaa', 'a*.*b.a.*c*b*a*c*')
+
+
+def test_11():
+    func = No11().maxArea
+    checkto1(func, 1, [1, 1])
 
 
 def test_136():
